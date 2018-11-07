@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8"></meta>
+    <title>hello</title>
+    <link rel="stylesheet" href="../bootstrap3/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="../bootstrap3/css/bootstrap.min.css" />
+    <script type="text/javascript" src="../bootstrap3/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../bootstrap3/js/bootstrap.min.js"></script>
+</head>
+<style type="text/css">
+    body {
+        padding: 10px
+    }
+</style>
+<body>
+<div class="web_login">
+    <form name="form2" id="regUser" accept-charset="utf-8"  action="/Verify" method="post">
+        <ul class="reg_form" id="reg-ul">
+            <div id="userCue" class="cue">register</div>
+            <li>
+                <label for="username"  class="input-tips2">User Name：</label>
+                <div class="inputOuter2">
+                    <input type="text" id="username" name="username" maxlength="16" class="inputstyle2"/>
+                </div>
+            </li>
+            <li>
+                <label for="password" class="input-tips2">Password：</label>
+                <div class="inputOuter2">
+                    <input type="password" id="password"  name="password" maxlength="16" class="inputstyle2"/>
+                </div>
+            </li>
+            <li>
+                <label for="password2" class="input-tips2">Confirm Password：</label>
+                <div class="inputOuter2">
+                    <input type="password" id="password2" name="password2" maxlength="16" class="inputstyle2" />
+                </div>
+            </li>
+            <li>
+                <p th:text="${info}"></p>
+                <div>
+                    <img alt="captcha" onclick="this.src='/Register?d='+new Date()*1" src="/Register" />
+                </div>
+                <input type="text" name="tryCode" />
+            </li>
+            <li>
+                <div class="inputArea">
+                    <input type="submit" value="Register" class="btn btn-success"></input>
+                </div>
+            </li><div class="cl"></div>
+        </ul>
+    </form>
+</div>
+</body>
+</html>
